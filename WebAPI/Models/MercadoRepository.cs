@@ -63,6 +63,34 @@ namespace WebAPI.Models
         }
 
 
+        //PREGUNTA EXAMEN 1 : RECUPERAMOS CON EL ID DE MERCADO LA INFORMACION DE APUESTAS
+
+        internal List<Mercado> RetrieveByTeam(int id)
+        {
+            List<Mercado> apuestas = new List<Mercado>();
+            using (DDBBContext context = new DDBBContext())
+            {
+
+                apuestas = context.Mercados.Where(m => m.MercadoID == id).ToList();
+            }
+            return apuestas;
+        }
+
+
+
+        //POSIBLE PREGUNTA EXAMEN 2: A PARTIR DE UN EQUIPO RECUPERAMOS SU INFORMACION
+
+
+        internal List<Mercado> RetrieveByEquipo(string equipo)
+        {
+            List<Mercado> apuestas = new List<Mercado>();
+
+            using (DDBBContext context = new DDBBContext())
+            {
+                apuestas = context.Mercados.Where(a => a.Evento.Local == equipo || a.Evento.Visitante == equipo).ToList();
+            }
+            return apuestas;
+        }
 
         /*
         private MySqlConnection Connect()

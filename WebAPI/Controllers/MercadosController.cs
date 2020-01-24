@@ -34,6 +34,17 @@ namespace WebAPI.Controllers
             Mercado m = repo.RetrieveById(MercadoId);
             return m;
         }
+        /*
+         
+            //POSBILE CONTROLADOR EJERCICIO 2 EXAMEN
+        // GET: api/Mercados?equipo
+        public Mercado Get(string equipo)
+        {
+            var repo = new MercadoRepository();
+            Mercado m = repo.RetrieveByEquipo(equipo);
+            return m;
+        }
+        */
 
         // POST: api/Mercados
         public void Post([FromBody]Mercado mercado)

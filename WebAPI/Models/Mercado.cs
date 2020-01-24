@@ -43,11 +43,13 @@ namespace WebAPI.Models
     {
         public MercadoDTO(double tipo_mercado, double cuota_under, double cuota_over)
         {
+          
             Tipo_mercado = tipo_mercado;
             Cuota_under = cuota_under;
             Cuota_over = cuota_over;
         }
 
+      
         public double Tipo_mercado { get; set; }
         public double Cuota_under { get; set; }
         public double Cuota_over { get; set; }

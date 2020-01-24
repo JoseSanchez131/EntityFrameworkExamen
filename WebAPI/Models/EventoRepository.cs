@@ -50,8 +50,19 @@ namespace WebAPI.Models
             }
         }
 
+        /*
+        internal List<Apuesta> RetrieveByTeam1(String eq)
+        {
+            List<Apuesta> Mercado = new List<Apuesta>();
+            using (DDBBContext context = new DDBBContext())
+            {
 
+                apuestas = context.Apuestas.Where(a => a.Mercado.Evento.Local == eq || a.Mercado.Evento.Visitante == eq).ToList();
+            }
+            return apuestas;
+        }
 
+    */
 
     }
 }

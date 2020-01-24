@@ -62,24 +62,42 @@ namespace WebAPI.Models
         public int UsuarioID { get; set; }
         public Mercado Mercado { get; set; }
     }
+
+
+    //DTO EJERCICIO 1 NO ME FUNCIONA, COJO LA PRIMERA CON TODOS LOS ATRIBUTOS.. **********************************************
+
     public class ApuestaExamen
     {
-        public ApuestaExamen(double dinero_apostado, String nombre, double cuota)
+        public ApuestaExamen(double dinero_apostado, int tipo_apuesta, int id_mercado, String nombre, double cuota)
         {
             Dinero_apostado = dinero_apostado;
             Nombre = nombre;
             Cuota = cuota;
-     
+            Tipo_apuesta = tipo_apuesta;
+            MercadoID = id_mercado;
+
+
+
+
 
         }
 
 
-        
+        public int MercadoID { get; set; }
+        public int Tipo_apuesta { get; set; }
         public String Nombre { get; set; }
         public double Cuota { get; set; }
         public double Dinero_apostado { get; set; }
+        public Usuario Usuario { get; set; }
+        public Mercado Mercado { get; set; }
+
 
     }
+
+
+
+
+
     public class Apuesta2
     {
         public Apuesta2(int id_apuesta)

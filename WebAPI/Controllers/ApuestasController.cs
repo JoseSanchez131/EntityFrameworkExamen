@@ -32,19 +32,33 @@ namespace WebAPI.Controllers
         }
         */
 
+            /*
         public Apuesta Get(int ApuestaId)
         {
             var repo = new ApuestaRepository();
             Apuesta m = repo.RetrieveById(ApuestaId);
             return m;
         }
+        */
 
-        public List <Apuesta> Get(string equipo)
+            //CONTROLADOR PREGUNTA 1 EXAMEN ***************************************
+        public List <Apuesta> Get(int id)
         {
             var repo = new ApuestaRepository();
-            return repo.RetrieveByTeam(equipo);
+            return repo.RetrieveByTeam(id);
           
         }
+
+             //CONTROLADOR PREGUNTA 2 EXAMEN ***************************************
+
+        //Apuesta?equipo=Valencia
+        public List<Apuesta> Get(string equipo)
+        {
+            var repo = new ApuestaRepository();
+            return repo.RetrieveByEquipo(equipo);
+        }
+
+
         // POST: api/Apuestas
         public void Post([FromBody]Apuesta apuesta)
         {
